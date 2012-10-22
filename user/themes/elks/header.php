@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>West Chester Elks Lodge #853</title>
+	<title><?php if(isset($post)) { echo $post->title_title . ' - '; } ?>West Chester Elks Lodge #853</title>
 	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
 	<?php echo $theme->header(); ?>
 </head>
