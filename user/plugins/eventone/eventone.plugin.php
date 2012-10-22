@@ -92,6 +92,9 @@ class EventOnePlugin extends Plugin
 		}
 		$criteria['has:info'] = array('event_start', 'event_end');
 		$criteria['orderby'] = 'info_event_start_value ASC';
+		$criteria['on_query_built'] = function(Query $query) {
+			$query->where()->add("date(hipi1.value, 'unixepoch') > date('now')");
+		};
 
 		$block->posts = Posts::get($criteria);
 		$block->criteria = $criteria;
@@ -101,8 +104,9 @@ class EventOnePlugin extends Plugin
 	{
 		$slug = Controller::get_var('slug');
 		$theme->post = Post::get(array('slug' => $slug));
-		header('content-type: text/calendar;');
-		header('content-disposition: attachment; filename="' . $slug . '.ics"');
+		header('Content-type: text/x-vcalendar; charset=utf-8');
+		header('content-disposition: inline; filename=' . $slug . '.ics');
+		ob_end_clean();
 		$theme->display('eventone.ics');
 	}
 
