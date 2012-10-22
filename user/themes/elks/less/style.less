@@ -56,6 +56,7 @@ h1 a {
 	color: #ffffff;
 	text-shadow: 2px 2px 2px #333;
 	font-family: 'new_athena_unicoderegular', serif;
+	cursor: pointer;
 
 	@media only screen and (max-width: 600px) {
 		background: #ffffff url(../images/usa-flag-600.jpg) no-repeat;
@@ -70,6 +71,7 @@ h1 a {
 		text-align: right;
 		margin: 0px 20px;
 		// text-indent: -9999px;
+		white-space: nowrap;
 	}
 	h1 {
 		margin-top: 0px;
@@ -83,6 +85,11 @@ h1 a {
 		height: 1px;
 	}
 }
+
+#home {
+	display: none;
+}
+
 .minifeatures {
 	display: none;
 
@@ -143,10 +150,16 @@ h1 a {
 
 #maincontent {
 	.column(8);
+	@media only screen and (max-width: 600px) {
+		.column(12);
+	}
 }
 
 #sidebar {
 	.column(4);
+	@media only screen and (max-width: 600px) {
+		.column(12);
+	}
 }
 
 .display_home #sidebar {
@@ -161,7 +174,7 @@ h1 a {
 	.clearfix;
 }
 
-.upcoming ol {
+.block-title-upcoming-events ol {
 	list-style: none;
 	padding-left: 1.5em;
 	li {
@@ -173,7 +186,7 @@ h1 a {
 footer {
 	clear: both;
 	margin-top: 0.5em;
-	ul {
+	ol {
 		text-align: right;
 		li {
 			display: inline;

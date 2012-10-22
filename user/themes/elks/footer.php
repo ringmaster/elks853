@@ -2,11 +2,7 @@
 	</div>
 
 	<footer>
-		<ul>
-			<li><a href="#">Contact Information</a></li>
-			<li><a href="#">Get Directions</a></li>
-			<li><a href="#">Lodge Hours</a></li>
-		</ul>
+		<?php echo $theme->area('footer'); ?>
 	</footer>
 
 	<?php echo $theme->footer(); ?>

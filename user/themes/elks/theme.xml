@@ -10,9 +10,6 @@
 	<description><![CDATA[A theme for the West Chester Elks Lodge #853]]></description>
 
 	<areas>
-		<area name="home" title="Home">
-			<description><![CDATA[At the bottom of the home page]]></description>
-		</area>
 		<area name="sidebar" title="Sidebar">
 			<description><![CDATA[The sidebar area]]></description>
 		</area>
