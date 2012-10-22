@@ -189,9 +189,13 @@ footer {
 	margin-top: 0.5em;
 	ol {
 		text-align: right;
+		@media only screen and (max-width: 600px) {
+			text-align: center;
+		}
 		li {
 			display: inline;
 			margin-right: 20px;
+			white-space: nowrap;
 		}
 	}
 }
