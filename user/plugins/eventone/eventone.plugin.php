@@ -5,6 +5,8 @@ class EventOnePlugin extends Plugin
 	function action_init()
 	{
 		$this->add_template( 'block.eventone_upcoming', __DIR__ . '/block.eventone_upcoming.php' );
+		$this->add_template( 'eventone.ics', __DIR__ . '/eventone.ics.php' );
+		$this->add_rule('slug/"event.ics"', 'event_ics');
 	}
 
 	public function action_plugin_activation( $plugin_file )
@@ -95,6 +97,14 @@ class EventOnePlugin extends Plugin
 		$block->criteria = $criteria;
 	}
 
+	public function theme_route_event_ics($theme, $handler)
+	{
+		$slug = Controller::get_var('slug');
+		$theme->post = Post::get(array('slug' => $slug));
+		header('content-type: text/calendar;');
+		header('content-disposition: attachment; filename="' . $slug . '.ics"');
+		$theme->display('eventone.ics');
+	}
 
 }
 ?>
