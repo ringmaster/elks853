@@ -4,3 +4,12 @@
 [submodule "doc"]
 	path = doc
 	url = https://github.com/habari/doc.git
+[submodule "user/plugins/redactor"]
+	path = user/plugins/redactor
+	url = git@github.com:ringmaster/redactor.git
+[submodule "user/plugins/postblock"]
+	path = user/plugins/postblock
+	url = git@github.com:habari-extras/postblock.git
+[submodule "user/plugins/simpleblock"]
+	path = user/plugins/simpleblock
+	url = git@github.com:habari-extras/simpleblock.git
